@@ -1,6 +1,3 @@
-dependencies:
-  pre:
-    - npm install -g npm
 machine:
   java:
     version: oraclejdk8
