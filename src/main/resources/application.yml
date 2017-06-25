@@ -21,16 +21,6 @@ info:
 logging:
   path: /log/
 
-# Endpoints
-endpoints:
-  shutdown:
-    enabled: false
-  health:
-    enabled: true
-    sensitive: false
-  logfile:
-    sensitive: false
-
 # Management
 management:
   address: ${server.address}
@@ -46,7 +36,7 @@ management:
 server:
  use-forward-headers: false
  context-path: /
- port: 8080
+ port: 80
  address: localhost
  compression:
    enabled: true
