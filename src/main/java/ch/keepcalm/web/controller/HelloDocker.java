@@ -11,6 +11,6 @@ public class HelloDocker {
 
     @RequestMapping("/")
     public String home() {
-        return "Hello Docker World.... (api-gateway)";
+        return "Hello Docker World.... ";
     }
 }

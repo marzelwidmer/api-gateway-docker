@@ -23,12 +23,14 @@ logging:
 
 # Management
 management:
+  security:
+    enabled: false
   address: ${server.address}
   port: ${server.port}
-  context-path: /application
   info:
      git:
        mode: full
+  context-path: /manage
 
 ## Embedded Tomcat Stuff
 server:
