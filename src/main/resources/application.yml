@@ -25,20 +25,19 @@ logging:
 management:
   address: ${server.address}
   port: ${server.port}
-  context-path: /manage
+  context-path: /application
   info:
      git:
        mode: full
-  security:
-    enabled: false
 
 ## Embedded Tomcat Stuff
 server:
  use-forward-headers: false
- context-path: /
- port: 80
+ port: 8080
  address: localhost
  compression:
    enabled: true
    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+ servlet:
+   context-path: /
 
