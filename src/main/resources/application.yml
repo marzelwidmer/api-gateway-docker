@@ -32,9 +32,18 @@ management:
        mode: full
   context-path: /manage
 
+# Endpoints
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
 ## Embedded Tomcat Stuff
 server:
- use-forward-headers: false
+ use-forward-headers: true
  port: 8080
  address: localhost
  compression:
