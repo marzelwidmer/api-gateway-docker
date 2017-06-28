@@ -35,3 +35,11 @@ For more information please visit the {spring-boot-ref-guide-executable-jar}[Spr
 
 There are additional Spring profiles available.
 
+
+
+    mvn package docker:build -Pdocker
+
+    docker run -d -p 8080:8080 marzelwidmer/api-gateway
+
+    docker rm $(docker ps -a -q)
+    docker rmi $(docker images -q) -f
