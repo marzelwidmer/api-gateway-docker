@@ -12,5 +12,5 @@ FROM hypriot/rpi-java
 # Build number hard-coded so far
 ADD api-gateway.jar app.jar
 
-EXPOSE 80
+EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
