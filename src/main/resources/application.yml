@@ -1,6 +1,54 @@
+# Spring
 spring:
+  profiles:
+    active: local
+  messages:
+    basename: i18n/messages
+    cache-seconds: -1
+    encoding: UTF-8
   application:
     name: @project.name@
+  cloud:
+    config:
+      label: @project.name@
+      uri: http://${server.address}:8888
+
+# App configuration support for link generation behind a proxy
+app:
+  contextPath: /
+
+# Zuul
+zuul:
+  add-host-header: true
+  add-proxy-headers: false
+  host:
+    socket-timeout-millis: 300000
+  routes:
+    price-service:
+      path: /api/**
+      url:  http://${server.address}:9050/api/
+    spring-boot-admin:
+      path: /manage/spring-boot-admin/**
+      url:  http://${server.address}:8081/spring-boot-admin
+      sensitive-headers:
+
+# Endpoints
+endpoints:
+  shutdown:
+    enabled: true
+  health:
+    enabled: true
+    sensitive: false
+  logfile:
+    sensitive: false
+  # Monitoring
+  monitoring:
+    application: ${info.build.name}
+    group-for-alerts: java
+    server-name: ${server.address}
+    health:
+      price-service: http://${server.address}:9050/manage/health
+      session-data-store: http://${server.address}:9040/manage/health
 
 # Infos Build
 info:
@@ -12,47 +60,18 @@ info:
 
 # Logging
 logging:
-  path: /log/
+  path: /srv/api-gateway/log/
 
 # Management
 management:
+  address: ${server.address}
+  port: ${server.port}
   context-path: /manage
   info:
      git:
        mode: full
   security:
     enabled: false
-
-endpoints:
-  health:
-    sensitive: false
-  restart:
-    enabled: true
-  shutdown:
-    enabled: true
-
-# Zuul
-zuul:
-  add-host-header: true
-  add-proxy-headers: true
-  host:
-    socket-timeout-millis: 300000
-  routes:
-    price-service:
-      path: /price-service/api/**
-      url:  http://${server.address}:9050/api/
-    # manage url's
-    session-data-store-manage:
-      path: /manage/session-data-store/**
-      url:  http://${server.address}:9040/manage/
-    price-service-manage:
-      path: /manage/price-service/**
-      url:  http://${server.address}:9050/manage/
-    spring-boot-admin:
-      path: /manage/spring-boot-admin/**
-      url:  http://${server.address}:8081/spring-boot-admin
-      sensitive-headers:
-
 
 ## Embedded Tomcat Stuff
 server:
@@ -64,5 +83,3 @@ server:
    enabled: true
    mime-types: application/json,application/xml,text/html,text/xml,text/plain
  max-http-header-size: 16380
-
-

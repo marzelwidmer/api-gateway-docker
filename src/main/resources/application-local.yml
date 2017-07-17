@@ -1,0 +1,12 @@
+# App configuration support for link generation behind a proxy
+app:
+  # if root '/' configured you have to like '//' because of other configured links definition
+  contextPath: //
+
+# Logging
+logging:
+  path: log/
+
+endpoints:
+  monitoring:
+    server-name: localhost/local

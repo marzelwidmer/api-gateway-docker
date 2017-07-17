@@ -1,15 +1,9 @@
 ${AnsiColor.BRIGHT_BLUE}
-${AnsiColor.BRIGHT_BLUE}____  __.                   _________        .__
-${AnsiColor.BRIGHT_BLUE}|    |/ _|____   ____ ______ \_   ___ \_____  |  |   _____
-${AnsiColor.BRIGHT_BLUE}|      <_/ __ \_/ __ \\____ \/    \  \/\__  \ |  |  /     \
-${AnsiColor.BRIGHT_BLUE}|    |  \  ___/\  ___/|  |_> >     \____/ __ \|  |_|  Y Y  \
-${AnsiColor.BRIGHT_BLUE}|____|__ \___  >\___  >   __/ \______  (____  /____/__|_|  /
-${AnsiColor.BRIGHT_BLUE}        \/   \/     \/|__|           \/     \/           \/
-${AnsiColor.BRIGHT_BLUE}
-${AnsiColor.BRIGHT_BLUE}                   ${info.build.name}
-${AnsiColor.BRIGHT_BLUE}                   ${info.build.description}
-${AnsiColor.BRIGHT_BLUE}                   ${info.build.version}
-${AnsiColor.BRIGHT_BLUE}                   address:${server.address}
-${AnsiColor.BRIGHT_BLUE}                   port:${server.port}
-${AnsiColor.DEFAULT}
-
+${AnsiColor.BRIGHT_BLUE}              _                   _
+${AnsiColor.BRIGHT_BLUE}             (_)                 | |                               ${info.build.version}
+${AnsiColor.BRIGHT_BLUE}   __ _ _ __  _ ______ __ _  __ _| |_ _____      ____ _ _   _      address:${server.address}
+${AnsiColor.BRIGHT_BLUE}  / _` | '_ \| |______/ _` |/ _` | __/ _ \ \ /\ / / _` | | | |     port:${server.port}
+${AnsiColor.BRIGHT_BLUE} | (_| | |_) | |     | (_| | (_| | ||  __/\ V  V / (_| | |_| |
+${AnsiColor.BRIGHT_BLUE}  \__,_| .__/|_|      \__, |\__,_|\__\___| \_/\_/ \__,_|\__, |
+${AnsiColor.BRIGHT_BLUE}       | |             __/ |                             __/ |
+${AnsiColor.BRIGHT_BLUE}       |_|            |___/                             |___/                      ${AnsiColor.DEFAULT}
